@@ -1,0 +1,119 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-info: var(--info);
+  --color-doc: var(--doc);
+  --color-orange: var(--orange);
+  --color-slate: var(--slate);
+  --color-on-color: var(--on-color);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 0.75rem;
+  --background: oklch(0.165 0.035 262);
+  --foreground: oklch(0.96 0.01 255);
+  --card: oklch(0.215 0.04 262);
+  --card-foreground: oklch(0.96 0.01 255);
+  --popover: oklch(0.23 0.04 262);
+  --popover-foreground: oklch(0.96 0.01 255);
+  --primary: oklch(0.62 0.19 256);
+  --primary-foreground: oklch(0.99 0 0);
+  --secondary: oklch(0.27 0.045 262);
+  --secondary-foreground: oklch(0.96 0.01 255);
+  --muted: oklch(0.25 0.04 262);
+  --muted-foreground: oklch(0.72 0.03 258);
+  --accent: oklch(0.32 0.09 260);
+  --accent-foreground: oklch(0.98 0 0);
+  --destructive: oklch(0.63 0.22 22);
+  --destructive-foreground: oklch(0.99 0 0);
+  --success: oklch(0.7 0.17 145);
+  --warning: oklch(0.82 0.16 85);
+  --info: oklch(0.72 0.12 195);
+  --doc: oklch(0.6 0.2 295);
+  --orange: oklch(0.72 0.18 50);
+  --slate: oklch(0.5 0.04 260);
+  --on-color: oklch(0.99 0 0);
+  --border: oklch(0.3 0.04 262);
+  --input: oklch(0.3 0.04 262);
+  --ring: oklch(0.62 0.19 256);
+  --chart-1: var(--primary);
+  --chart-2: var(--success);
+  --chart-3: var(--warning);
+  --chart-4: var(--destructive);
+  --chart-5: var(--info);
+  --sidebar: oklch(0.15 0.032 262);
+  --sidebar-foreground: oklch(0.9 0.015 255);
+  --sidebar-primary: oklch(0.62 0.19 256);
+  --sidebar-primary-foreground: oklch(0.99 0 0);
+  --sidebar-accent: oklch(0.33 0.11 260);
+  --sidebar-accent-foreground: oklch(0.99 0 0);
+  --sidebar-border: oklch(0.27 0.04 262);
+  --sidebar-ring: oklch(0.62 0.19 256);
+  --gradient-header: linear-gradient(90deg, oklch(0.19 0.04 262), oklch(0.22 0.05 262));
+  --shadow-card: 0 10px 30px -15px oklch(0 0 0 / 0.6);
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  html { color-scheme: dark; }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+  }
+}
+
+@utility panel {
+  background-color: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-card);
+}
+
+@utility bg-header {
+  background-image: var(--gradient-header);
+}
